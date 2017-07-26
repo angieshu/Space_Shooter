@@ -2,24 +2,25 @@
  * @Author: Anhelina Shulha <angieshu>
  * @Date:   Jul-25-2017
  * @Email:  anhelina.shulha@gmail.com
- * @Filename: Player.class.hpp
+ * @Filename: Enemy.class.hpp
  * @Last modified by:   angieshu
  * @Last modified time: Jul-25-2017
  */
 
 
-#ifndef PLAYER_CLASS_HPP
-#define PLAYER_CLASS_HPP
+#ifndef ENEMY_CLASS_HPP
+#define ENEMY_CLASS_HPP
 
 #include "AUnit.class.hpp"
+#include "SpaceShooter.hpp"
 
-class Player: public AUnit {
+class Enemy: public AUnit {
 
 public:
-	Player(void);
-	~Player(void);
+	Enemy(int x);
+	~Enemy(void);
 
-	virtual void	moveDown(void);
+	virtual void moveDown(void);
 };
 
 #endif

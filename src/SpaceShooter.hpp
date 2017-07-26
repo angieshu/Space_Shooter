@@ -19,8 +19,10 @@
 #define WINDOW_WIDTH 500
 #define WINDOW_HEIGHT 500
 
-#define ENEMY_WIDTH 5
-#define ENEMY_HEIGHT 10
+#define ENEMY_MAX_QUANTITY 500
+
+#define ENEMY_WIDTH 33
+#define ENEMY_HEIGHT 17
 #define PLAYER_WIDTH 33
 #define PLAYER_HEIGHT 25
 
@@ -28,6 +30,7 @@
 #define PLAYER_START_Y (WINDOW_HEIGHT - PLAYER_HEIGHT - 1)
 
 #define PLAYER_IMG ("img/player.png")
+#define ENEMY_IMG ("img/enemyShip.png")
 
 
 class AUnit;

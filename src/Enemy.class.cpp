@@ -23,5 +23,5 @@ Enemy::~Enemy(void) {
 void	Enemy::moveDown(void) {
 	// if (getY() >= WINDOW_HEIGHT - ENEMY_HEIGHT - 3)
 	// 	return;
-	setY(getY() + 3);
+	setY(getY() + 2);
 }

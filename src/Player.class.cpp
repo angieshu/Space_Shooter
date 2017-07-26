@@ -21,5 +21,7 @@ Player::~Player(void) {
 }
 
 void		Player::moveDown(void) {
-	setY(getY() + 1);
+	if (getY() >= WINDOW_HEIGHT - PLAYER_HEIGHT - 3)
+		return;
+	setY(getY() + 3);
 }

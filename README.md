@@ -80,6 +80,10 @@ AUnit is an abstract class for all units you could find in the game: Player, Ene
 
 <img width="420" alt="screen shot 2017-07-26 at 10 59 06 pm" src="https://user-images.githubusercontent.com/25576444/28656316-1e980bd2-7256-11e7-9c13-3dabbaea3b57.png">
 
+Here we have widht and height of an object, its position on a screen and its image. Also getter- and setter- along with movement-functions are present. load() and render() load and render object's image to the screen respectively:
+
+<img width="589" alt="screen shot 2017-07-26 at 11 10 41 pm" src="https://user-images.githubusercontent.com/25576444/28656608-c899a57c-7257-11e7-91f6-cc309f40c90e.png">
+
 
 
 

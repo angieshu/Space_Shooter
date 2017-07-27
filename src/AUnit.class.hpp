@@ -4,7 +4,7 @@
  * @Email:  anhelina.shulha@gmail.com
  * @Filename: AUnit.class.hpp
  * @Last modified by:   angieshu
- * @Last modified time: Jul-25-2017
+ * @Last modified time: Jul-26-2017
  */
 
 
@@ -30,6 +30,7 @@ public:
 	int				getHeight(void);
 	int				getX(void);
 	int				getY(void);
+	SDL_Texture*	getTexture(void);
 
 	void			setWidth(int width);
 	void			setHeight(int height);
@@ -39,9 +40,6 @@ public:
 	bool			load(std::string path, t_settings& settings);
 	void			free(void);
 	void			render(t_settings& settings);
-
-	// virtual void	shoot(void);
-	// virtual void	containes(void);
 
 	virtual void	moveDown(void) = 0;
 	virtual void	moveRight(void);

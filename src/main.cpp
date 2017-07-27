@@ -4,18 +4,16 @@
  * @Email:  anhelina.shulha@gmail.com
  * @Filename: main.cpp
  * @Last modified by:   angieshu
- * @Last modified time: Jul-25-2017
+ * @Last modified time: Jul-26-2017
  */
 
 
 #include "SpaceShooter.hpp"
 #include "Player.class.hpp"
-#include "Enemy.class.hpp"
-#include "Meteor.class.hpp"
-#include "Star.class.hpp"
+#include "Background.class.hpp"
 
 bool	init(t_settings& settings) {
-	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0) {
 		std::cout << SDL_GetError() << std::endl;
 		return false;
 	}
@@ -25,7 +23,7 @@ bool	init(t_settings& settings) {
 										SDL_WINDOWPOS_UNDEFINED,
 										SDL_WINDOWPOS_UNDEFINED,
 										WINDOW_WIDTH,
-										WINDOW_HEIGHT,
+										WINDOW_HEIGHT + INFOBOX_HEIGHT,
 										SDL_WINDOW_SHOWN);
 
 
@@ -44,6 +42,10 @@ bool	init(t_settings& settings) {
 		std::cout << IMG_GetError() << std::endl;
 		return false;
 	}
+	if (TTF_Init() == -1) {
+		std::cout << TTF_GetError() << std::endl;
+		return false;
+	}
 	return true;
 }
 
@@ -55,25 +57,16 @@ void	close(t_settings& settings, Player& player) {
 	settings.renderer = NULL;
 	settings.window = NULL;
 
+	TTF_Quit();
 	IMG_Quit();
 	SDL_Quit();
 }
 
 int		main(int ac, char* av[]) {
-	int randNum;
-	int enemy_quantity = 2;
-	Enemy* enemies[ENEMY_MAX_QUANTITY];
-	Meteor* meteors[METEOR_MAX_QUANTITY];
-	Star* stars[STAR_MAX_QUANTITY];
+	Background background;
 	t_settings settings;
 	srand(time(0));
 
-	for (int i = 0; i < ENEMY_MAX_QUANTITY; i++)
-		enemies[i] = NULL;
-	for (int i = 0; i < METEOR_MAX_QUANTITY; i++)
-		meteors[i] = NULL;
-	for (int i = 0; i < STAR_MAX_QUANTITY; i++)
-		stars[i] = NULL;
 	settings.window = NULL;
 	settings.renderer = NULL;
 
@@ -86,7 +79,7 @@ int		main(int ac, char* av[]) {
 	else {
 		bool quit = false;
 		SDL_Event event;
-		int ticks = 0;
+		unsigned long ticks = 0;
 		while (!quit) {
 			while (SDL_PollEvent(&event) != 0) {
 				if (event.type == SDL_QUIT)
@@ -99,82 +92,42 @@ int		main(int ac, char* av[]) {
 						case SDLK_DOWN: case SDLK_s:	player.moveDown(); break;
 						case SDLK_SPACE:				player.shoot(settings); break;
 						case SDLK_ESCAPE: quit = true;
-						default:
-							break;
+						default: break;
 					}
 				}
 			}
-			if (ticks % (STAR_HEIGHT * 10) == 0) {
-				for (int i = 0; i < STAR_MAX_QUANTITY; i++) {
-					if (stars[i]) continue;
-					int pos_x = rand() % (WINDOW_WIDTH - STAR_WIDTH);
-					stars[i] = new Star(pos_x);
-					stars[i]->load(STAR_IMG, settings);
-					break;
-				}
+			if (ticks % (STAR_HEIGHT * 5) == 0)
+				background.makeStar(settings);
+
+			if (ticks % (METEOR_HEIGHT * 20) == 0)
+				background.makeMeteor(settings);
+
+			if (ticks % (ENEMY_HEIGHT * 24) == 0)
+				background.makeEnemy(settings);
+
+			background.killEnemy(player);
+			background.killMeteor(player);
+
+			if (background.hitEnemy(player) || background.hitMeteor(player)) {
+				SDL_SetRenderDrawColor(settings.renderer, 0x61, 0x23, 0x7A, 0xFF);
+				SDL_RenderClear(settings.renderer);
+				background.loadGameOver(GAME_OVER, settings);
+				SDL_RenderPresent(settings.renderer);
+				SDL_Delay(2000);
+				break;
 			}
-			if (ticks % (METEOR_HEIGHT * 10) == 0) {
-				for (int i = 0; i < METEOR_MAX_QUANTITY; i++) {
-					if (meteors[i]) continue;
-					int pos_x = rand() % (WINDOW_WIDTH - METEOR_WIDTH);
-					meteors[i] = new Meteor(pos_x);
-					meteors[i]->load(METEOR_IMG, settings);
-					break;
-				}
-			}
-			if (ticks % (ENEMY_HEIGHT * 32) == 0) {
-				for (int i = 0; i < ENEMY_MAX_QUANTITY; i++) {
-					if (enemy_quantity <= 0) break;
-					if (enemies[i]) continue;
-					randNum = rand() % 2;
-					if (randNum) {
-						int pos_x = (rand() % (WINDOW_WIDTH / ENEMY_WIDTH) + 1) * ENEMY_WIDTH - ENEMY_WIDTH;
-						enemies[i] = new Enemy(pos_x);
-						enemies[i]->load(ENEMY_IMG, settings);
-						enemy_quantity--;
-					}
-				}
-				enemy_quantity = 2;
-			}
+
 			SDL_SetRenderDrawColor(settings.renderer, 0x61, 0x23, 0x7A, 0xFF);
 			SDL_RenderClear(settings.renderer);
-			if (ticks % 2 == 0) {
-				for (int i = 0; i < STAR_MAX_QUANTITY; i++) {
-					if (stars[i]) {
-						if (stars[i]->getY() >= WINDOW_HEIGHT) {
-							delete stars[i];
-							stars[i]= NULL;
-							continue;
-						}
-						stars[i]->moveDown();
-						stars[i]->render(settings);
-					}
-				}
-			}
-			for (int i = 0; i < METEOR_MAX_QUANTITY; i++) {
-				if (meteors[i]) {
-					if (ticks % 3 == 0 && meteors[i]->getY() >= WINDOW_HEIGHT) {
-						delete meteors[i];
-						meteors[i] = NULL;
-						continue;
-					}
-					if (ticks % 3 == 0) meteors[i]->moveDown();
-					meteors[i]->render(settings);
-				}
-			}
-			for (int i = 0; i < ENEMY_MAX_QUANTITY; i++) {
-				if (enemies[i]) {
-					if (ticks % ENEMY_HEIGHT == 0 && enemies[i]->getY() >= WINDOW_HEIGHT) {
-						delete enemies[i];
-						enemies[i] = NULL;
-						continue;
-					}
-					if (ticks % ENEMY_HEIGHT == 0) enemies[i]->moveDown();
-					enemies[i]->render(settings);
-				}
-			}
+
+			background.displayStar(settings);
+			background.displayMeteor(settings, (ticks % 2 == 0));
+			background.displayEnemy(settings, (ticks % (ENEMY_HEIGHT / 2) == 0));
+
 			player.render(settings);
 			player.moveBullets(settings);
+
+			background.drawInfoBox(player, settings, ticks / 100);
 			SDL_RenderPresent(settings.renderer);
 			ticks++;
 		}

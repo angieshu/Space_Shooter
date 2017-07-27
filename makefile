@@ -10,13 +10,15 @@ NAME = SpaceShooter
 
 SRC = src/*.cpp
 
-FLAGS = -I/Library/Frameworks/SDL2.framework/Headers \
+FLAGS = -std=c++11 -I/Library/Frameworks/SDL2.framework/Headers \
  		-I/Library/Frameworks/SDL2_image.framework/Headers \
 		-I/Library/Frameworks/SDL2_mixer.framework/Headers \
+		-I/Library/Frameworks/SDL2_ttf.framework/Headers \
 		-F/Library/Frameworks \
 		-framework SDL2 \
 		-framework SDL2_image \
-		-framework SDL2_mixer
+		-framework SDL2_mixer \
+		-framework SDL2_ttf
 
 all: $(NAME)
 

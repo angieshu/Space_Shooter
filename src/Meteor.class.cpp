@@ -4,7 +4,7 @@
  * @Email:  anhelina.shulha@gmail.com
  * @Filename: Meteor.class.cpp
  * @Last modified by:   angieshu
- * @Last modified time: Jul-25-2017
+ * @Last modified time: Jul-26-2017
  */
 
 

@@ -4,7 +4,7 @@
  * @Email:  anhelina.shulha@gmail.com
  * @Filename: Fireball.class.hpp
  * @Last modified by:   angieshu
- * @Last modified time: Jul-25-2017
+ * @Last modified time: Jul-26-2017
  */
 
 
@@ -15,6 +15,9 @@
 #include "SpaceShooter.hpp"
 #include "Player.class.hpp"
 
+class Enemy;
+class Meteor;
+
 class Fireball: public AUnit {
 
 public:
@@ -22,6 +25,8 @@ public:
 	~Fireball(void);
 
 	virtual void	moveDown(void);
+	bool			contains(Enemy* enemy);
+	bool			contains(Meteor* meteor);
 
 };
 

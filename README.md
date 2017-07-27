@@ -53,4 +53,6 @@ cd /Library/Frameworks/SDL2_ttf.framework/
 codesign -f -s - SDL2_ttf
 ```
 
+Thanks to [Open Game Art](https://opengameart.org) you can have a great design and don't spend a lot of time on creating it by yourself. 
+
 

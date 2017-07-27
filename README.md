@@ -28,7 +28,7 @@ In this game you can:
 
 ## Getting Started
 
-For those who insterested to create something similar you need to install SDL packages. You can find the ones I used in folder SDL_packages: https://github.com/angieshu/Space_Shooter/tree/master/SDL_packages
+For those who insterested to create something similar you need to install SDL packages. You can find the ones I used in folder SDL_packages: https://github.com/angieshu/Space_Shooter/SDL_packages
 
 To install you just need to copy those three packages to /Library/Frameworks.
 Then enter next commands in your Terminal:

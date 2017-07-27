@@ -54,6 +54,7 @@ Thanks to [Open Game Art](https://opengameart.org) you can have a great design a
 
 In this program I made several classes: Background, AUnit, and its inheritors Player, Enemy, Meteor, Star and Fireball.
 
+
 #### Background class
 
 Probably, the biggest class in this program. Here I control background (obviously): create enemies, stars, meteors, make them move down and check collisions with player's bullets.
@@ -83,6 +84,21 @@ AUnit is an abstract class for all units you could find in the game: Player, Ene
 Here we have widht and height of an object, its position on a screen and its image. Also getter- and setter- along with movement-functions are present. load() and render() load and render object's image to the screen respectively:
 
 <img width="589" alt="screen shot 2017-07-26 at 11 10 41 pm" src="https://user-images.githubusercontent.com/25576444/28656608-c899a57c-7257-11e7-91f6-cc309f40c90e.png">
+
+
+#### Player class
+
+Inherit from AUnit class. Stores info about bullets used, current score, lives left, Hit Points, and colliders. Beside getter- and setter-functions has its own moveDown() function. Also has unique functions: moveBullets,() shoot(), containes(), kill().    
+
+<img width="389" alt="screen shot 2017-07-26 at 11 18 27 pm" src="https://user-images.githubusercontent.com/25576444/28656815-dbcf6d24-7258-11e7-9367-5f521076affa.png">
+
+containes() functions check for collision with Enemy and Meteor:
+
+<img width="392" alt="screen shot 2017-07-26 at 11 26 08 pm" src="https://user-images.githubusercontent.com/25576444/28657017-e629dd94-7259-11e7-8a98-d581ccb3e8ce.png">
+
+kill() function checks if Enemy ot Meteor got killed by bullets:
+
+<img width="380" alt="screen shot 2017-07-26 at 11 28 40 pm" src="https://user-images.githubusercontent.com/25576444/28657090-3af28f56-725a-11e7-9295-db2f71d621b3.png">
 
 
 

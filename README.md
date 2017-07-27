@@ -110,5 +110,10 @@ Inherit from AUnit class. Called only from Player class. Has its own moveDown() 
 <img width="331" alt="screen shot 2017-07-26 at 11 37 16 pm" src="https://user-images.githubusercontent.com/25576444/28657352-8fe28ede-725b-11e7-960a-e5f93edb70c8.png">
 
 
+#### Enemy, Meteor and Star classes
+
+Inherit from AUnit class. Have their own moveDown() and no unique functions. Built more or less in the same way :
+
+<img width="241" alt="screen shot 2017-07-26 at 11 42 16 pm" src="https://user-images.githubusercontent.com/25576444/28657476-2f929014-725c-11e7-88ef-a0b4d502fdad.png">
 
 

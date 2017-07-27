@@ -60,6 +60,12 @@ Probably, the biggest class in this program. Here I control background (obviousl
 
 <img width="446" alt="screen shot 2017-07-26 at 10 26 08 pm" src="https://user-images.githubusercontent.com/25576444/28655571-9a50186e-7251-11e7-9ada-8b87072eb118.png">
 
+Enemies, meteors and stars are stored in arrays. This way easier manage creation, movements and collisions. All of them created at the top of the game window at random X position.
+For example, that is how meteors made:
+
+<img width="395" alt="screen shot 2017-07-26 at 10 36 13 pm" src="https://user-images.githubusercontent.com/25576444/28655797-ee994f2a-7252-11e7-99b1-7745c8c9141f.png">
+
+
 
 
 

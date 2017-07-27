@@ -36,23 +36,22 @@ Then run following commands in your Terminal:
 
 ```
 cd /Library/Frameworks/SDL2.framework/
-```
-```
+
 codesign -f -s - SDL2
-```
-```
+
 cd /Library/Frameworks/SDL2_image.framework/
-```
-```
+
 codesign -f -s - SDL2_image
-```
-```
+
 cd /Library/Frameworks/SDL2_ttf.framework/
-```
-```
+
 codesign -f -s - SDL2_ttf
 ```
 
-Thanks to [Open Game Art](https://opengameart.org) you can have a great design and don't spend a lot of time on creating it by yourself. 
+Thanks to [Open Game Art](https://opengameart.org) you can have a great design and don't spend a lot of time on creating it by yourself.
+
+## Code Overview
+
+
 
 

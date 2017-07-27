@@ -52,6 +52,14 @@ Thanks to [Open Game Art](https://opengameart.org) you can have a great design a
 
 ## Code Overview
 
+In this program I made several classes: Background, AUnit, and its inheritors Player, Enemy, Meteor, Star and Fireball.
+
+#### Background class
+
+Probably, the biggest class in this program. Here I control background (obviously): create enemies, stars, meteors, make them move down and check collisions with player's bullets.
+
+<img width="446" alt="screen shot 2017-07-26 at 10 26 08 pm" src="https://user-images.githubusercontent.com/25576444/28655571-9a50186e-7251-11e7-9ada-8b87072eb118.png">
+
 
 
 

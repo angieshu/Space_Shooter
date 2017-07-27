@@ -11,11 +11,19 @@ I was always curious how video games work: how the design made, how you can cont
 ## Game Description
 
 In this game you can:
+
 • Control player's space ship with A, W, S, D and arrow keys
+
 • Shoot enemies and meteors using space
+
 • Kill and get killed
+
 • Get hit by enemy's space ships (50 hit points) and meteors (20 hit points)
+
 • Collect points by killing enemies and meteors
+
 • Lose life by losing 100 hit points
+
 • Exit pressing ESC
+
 

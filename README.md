@@ -117,3 +117,10 @@ Inherit from AUnit class. Have their own moveDown() and no unique functions. Bui
 <img width="241" alt="screen shot 2017-07-26 at 11 42 16 pm" src="https://user-images.githubusercontent.com/25576444/28657476-2f929014-725c-11e7-88ef-a0b4d502fdad.png">
 
 
+#### main.cpp
+
+After initiazing a game window and a player there is a game loop created. Here we can shoot, move player, render enemies and obsctacles, quit and even die:
+
+<img width="473" alt="screen shot 2017-07-26 at 11 55 53 pm" src="https://user-images.githubusercontent.com/25576444/28657979-0f7dc4ea-725e-11e7-9e49-6ef034ed2009.png">
+
+

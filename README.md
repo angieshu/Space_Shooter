@@ -123,4 +123,21 @@ After initiazing a game window and a player there is a game loop created. Here w
 
 <img width="473" alt="screen shot 2017-07-26 at 11 55 53 pm" src="https://user-images.githubusercontent.com/25576444/28657979-0f7dc4ea-725e-11e7-9e49-6ef034ed2009.png">
 
+## Installation and Usage
+
+1. Clone repository
+2. Run next command in your terminal :
+
+```
+./Space_Shooter
+```
+
+### Limitations
+
+The game will only run on MacOs machine.
+
+## Author
+
+Anhelina Shulha
+
 

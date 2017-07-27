@@ -96,9 +96,18 @@ containes() functions check for collision with Enemy and Meteor:
 
 <img width="392" alt="screen shot 2017-07-26 at 11 26 08 pm" src="https://user-images.githubusercontent.com/25576444/28657017-e629dd94-7259-11e7-8a98-d581ccb3e8ce.png">
 
-kill() function checks if Enemy ot Meteor got killed by bullets:
+kill() function checks if Enemy or Meteor got killed by bullets:
 
 <img width="380" alt="screen shot 2017-07-26 at 11 28 40 pm" src="https://user-images.githubusercontent.com/25576444/28657090-3af28f56-725a-11e7-9295-db2f71d621b3.png">
+
+
+#### Fireball class
+
+Inherit from AUnit class. Called only from Player class. Has its own moveDown() and two unique functions contains() that check for collisions with Enemy and Meteor.
+
+<img width="300" alt="screen shot 2017-07-26 at 11 37 01 pm" src="https://user-images.githubusercontent.com/25576444/28657338-771adb2c-725b-11e7-9f29-3d255ccc2551.png">
+
+<img width="331" alt="screen shot 2017-07-26 at 11 37 16 pm" src="https://user-images.githubusercontent.com/25576444/28657352-8fe28ede-725b-11e7-960a-e5f93edb70c8.png">
 
 
 

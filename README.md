@@ -34,12 +34,27 @@ To install you just need to copy those three packages to /Library/Frameworks.
 Then enter next commands in your Terminal:
 
 ```
-/Library/Frameworks/SDL2.framework/
+cd /Library/Frameworks/SDL2.framework/
 ```
 
 ```
 codesign -f -s - SDL2
 ```
 
+```
+cd /Library/Frameworks/SDL2_image.framework/
+```
+
+```
+codesign -f -s - SDL2_image
+```
+
+```
+cd /Library/Frameworks/SDL2_ttf.framework/
+```
+
+```
+codesign -f -s - SDL2_ttf
+```
 
 

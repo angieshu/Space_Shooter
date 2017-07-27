@@ -66,12 +66,19 @@ For example, that is how meteors generated:
 <img width="395" alt="screen shot 2017-07-26 at 10 36 13 pm" src="https://user-images.githubusercontent.com/25576444/28655797-ee994f2a-7252-11e7-99b1-7745c8c9141f.png">
 
 In display*() functions objects get rended to the screen.
-
-In hit*() functions I check if the player got hit by enemy or meteor, and if he/she did, reduce his/her Hit Points. If there is not enough points, player loses life : 
+s
+In hit*() functions I check if the player got hit by enemy or meteor, and if he/she did, reduce his/her Hit Points. If there is not enough points, player loses life. If that was the last life function returns true meaning that the player died and game over : 
 
 <img width="343" alt="screen shot 2017-07-26 at 10 47 06 pm" src="https://user-images.githubusercontent.com/25576444/28656040-74c52c08-7254-11e7-9295-de1b6f4b265d.png">
 
+drawInfoBox() function creates a box at the bottom of the game screen with info about current score, time spent in the game, lives left and Hit Points.
 
+
+#### AUnit class
+
+AUnit is an abstract class for all units you could find in the game: Player, Enemy, Meteor, Star and even Fireball.
+
+<img width="420" alt="screen shot 2017-07-26 at 10 59 06 pm" src="https://user-images.githubusercontent.com/25576444/28656316-1e980bd2-7256-11e7-9c13-3dabbaea3b57.png">
 
 
 
